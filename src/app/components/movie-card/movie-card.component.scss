@@ -1,0 +1,141 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.movie-card {
+    border: none;   
+    background-color: #1a1c1b;
+    transition:all 0.2s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+
+    animation: fadein 0.8s;
+    -moz-animation: fadein 0.8s;
+    -webkit-animation: fadein 0.8s;
+    -o-animation: fadein 0.8s;
+
+    .card-list-loading {
+        position: absolute; 
+        left: 50%;
+        margin-left: -60px;
+        top: 50%;
+        margin-top: -50px;
+    }
+    .card-img {
+        width: 100%;
+        @include media-breakpoint-up(sm) { height: 20vw; }
+        @include media-breakpoint-up(md) { height: 58vw; }
+        @include media-breakpoint-up(lg) { height: 40vw; }
+        @include media-breakpoint-up(xl) { height: 15vw; }
+        object-fit: cover;
+        border-radius: 3px;
+        transition:all 0.2s ease-in-out;
+        opacity:1;
+    }
+
+    .card-img-detail {
+        width: 100%;
+        @include media-breakpoint-up(sm) { height: 20vw; }
+        @include media-breakpoint-up(md) { height: 58vw; }
+        @include media-breakpoint-up(lg) { height: 40vw; }
+        @include media-breakpoint-up(xl) { height: 37vw; }
+        object-fit: cover;
+        border-radius: 3px;
+        transition:all 0.2s ease-in-out;
+        opacity:1;
+    }
+}
+
+.movie-card:hover .card-img,
+.movie-card:hover:focus .card-img {
+    transform: scale(1.02);
+    opacity:0.5;
+}
+
+.movie-card:hover .card-img-overlay{
+    color:#FFFFFF;
+}
+
+.card-img-overlay>h4, .card-img-overlay>p, .card-img-overlay>.heart-icon{
+    visibility:hidden;
+}
+
+.card-img-overlay:hover h4, .card-img-overlay:hover p, .card-img-overlay:hover .heart-icon{
+    visibility: visible;
+}
+
+.card:hover .card-img-overlay .movie-year{
+    font-size:0.8em;
+    letter-spacing:0.02em;
+    position: relative;
+    top: 14px;
+}
+
+.card:hover .card-img-overlay .movie-title{
+    font-size:1.0em;
+    letter-spacing:0.02em;
+    position: relative;
+    top: 14px;
+}
+
+.card:hover .card-img-overlay .heart-icon {
+    background: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    mask: url('../../../assets/1.Icons/icon-heart-grey.svg');
+    mask-size: cover;
+    width: 1.7em;
+    height: 1.7em;
+    display:inline-block;
+
+    &:hover{
+        background: #7A8C99;
+    }
+}
+
+
+.card .card-img-overlay .heart-icon-full {
+    background: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    mask: url('../../../assets/1.Icons/icon-heart-full.svg');
+    mask-size: cover;
+    width: 1.7em;
+    height: 1.7em;
+    display:inline-block;
+}
+
+/*defining animations*/
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}

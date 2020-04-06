@@ -1,0 +1,10 @@
+    <div class="md-form input-group search-bar">
+        <span role="button" class="search-icon"></span>
+        <input 
+        type="search" 
+        minlength="3" 
+        class="form-control" 
+        [ngModel]="searchText" 
+        (ngModelChange)="onChange($event)" 
+        placeholder="Search movies...">
+    </div>
